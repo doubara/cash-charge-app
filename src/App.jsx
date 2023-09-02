@@ -1,34 +1,28 @@
+import {Routes, Route} from 'react-router-dom';
+
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import './index.css';
+
+// components imports
+import Navigation from './components/Navigation';
+import Header from './components/Header';
+
+// Import pages;
+import OverView from './pages/OverView';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='grid grid-cols-6 grid-row-6 border-2 border-color-red-700 min-h-screen'>
+      <Navigation className='col-start-1 col-end-2 row-start-1 row-end-6 border-2 border-red-700'></Navigation>
+      <Header className='col-start-2 col-span-5 border-2 '></Header>
+      <Routes>
+        <Route path='/' element={<OverView className='col-start-2 col-span-5 border-2 row-start-2 row-end-6'></OverView>}>
+          
+        </Route>
+      </Routes>
+    </div>
   )
 }
 
