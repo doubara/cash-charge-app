@@ -31,6 +31,9 @@ export default {
         gray: colors.neutral,
       },
     },
+    // screens: {
+    // 'xl': '340px',
+    // }
   },
   plugins: [],
 }
