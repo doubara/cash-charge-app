@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+
 const FaqComponent = (props) =>{
     const [click, setClick]  = useState(props.firstItem);
     // useEffect(()=>{
@@ -12,6 +14,9 @@ const FaqComponent = (props) =>{
     return (
         <div className='bg-white p-4 rounded-2xl mx-4 mb-4 text-sm md:text-2xl w-full md:w-[740px]'>
             <div>
+                <button type="button" onClick={clickQuestion}>
+                    <ChevronRightIcon></ChevronRightIcon>
+                </button>
                 <button type="button" onClick={clickQuestion} className="text-bold">{props.question.length > 0 ? props.question : 'How many days do we have in a year'}</button>
             </div>
             <div>
